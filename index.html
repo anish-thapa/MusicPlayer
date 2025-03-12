@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muziku</title>
+    <link rel="shortcut icon" href="assets/musi.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Hamburger Menu -->
+    <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">Muziku</div>
+            <i class="fas fa-times" id="close-sidebar"></i>
+        </div>
+        
+        <nav>
+            <ul class="main-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-compass"></i> Discover</a></li>
+                <li><a href="#"><i class="fas fa-broadcast-tower"></i> Radio</a></li>
+            </ul>
+
+            <h4>LIBRARY</h4>
+            <ul class="library-menu">
+                <li><a href="#"><i class="fas fa-clock"></i> Recently Added</a></li>
+                <li><a href="#"><i class="fas fa-heart"></i> Favorite Songs</a></li>
+                <li><a href="#" id="upload-link"><i class="fas fa-folder"></i> Local Files</a></li>
+            </ul>
+
+            <h4>PLAYLIST</h4>
+            <ul class="playlist-menu">
+                <li><a href="#"><i class="fas fa-music"></i> Lo-fi Music</a></li>
+                <li><a href="#"><i class="fas fa-star"></i> Best of Cranberries</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+        </header>
+
+        <!-- Now Playing Section -->
+        <section class="now-playing" id="now-playing" style="display: none;">
+            <div class="listening-to">Listening to</div>
+            <div class="current-track">
+                <img src="assets/defaultalbum.png" id="main-album" alt="Album Cover" draggable="false">
+                <div>
+                    <h1 id="main-title"></h1>
+                    <div id="main-artist"></div>
+                </div>
+                <i class="far fa-heart" id="favorite-btn"></i>
+            </div>
+            
+            <div class="playback-controls">
+                <div class="time-info">
+                    <span id="main-current">0:00</span>
+                    <span id="main-duration">0:00</span>
+                </div>
+                <input type="range" id="main-progress" value="0" class="progress">
+                
+                <div class="controls-center">
+                    <button id="main-shuffle"><i class="fas fa-random"></i></button>
+                    <button id="main-prev"><i class="fas fa-step-backward"></i></button>
+                    <button id="main-play"><i class="fas fa-play"></i></button>
+                    <button id="main-next"><i class="fas fa-step-forward"></i></button>
+                    <button id="main-repeat"><i class="fas fa-redo"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Songs Section -->
+        <section class="popular-songs">
+            <h2>Popular Songs</h2>
+            <div class="songs-list" id="songs-container"></div>
+        </section>
+    </div>
+
+    <!-- Player Controls -->
+    <div class="player-controls">
+        <div class="volume-control">
+            <i class="fas fa-volume-up"></i>
+            <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+        </div>
+    </div>
+
+    <!-- Upload Overlay -->
+    <div class="upload-overlay" id="upload-overlay">
+        <div class="upload-container">
+            <h2>Upload Music Files</h2>
+            <div class="upload-box" id="upload-box">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Drag & Drop or <span id="browse-files">Browse Files</span></p>
+                <input type="file" id="file-input" multiple accept="audio/*" style="display: none;">
+            </div>
+            <button id="close-upload">Close</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
