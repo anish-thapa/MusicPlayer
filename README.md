@@ -1,4 +1,4 @@
 # MusicPlayer
 
 
-Hosted at https://anish-thapa.github.io/Musicplayer/
+Hosted at: https://anish-thapa.github.io/musicplayer/
